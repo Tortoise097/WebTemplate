@@ -37,15 +37,15 @@ post_id_3 = runhistory_collection.insert_one(post3).inserted_id # insertion retu
 # lets see what we've done
 import pprint
 
-item = User_collection.find_one({'username':'example_username'})
+item = user_collection.find_one({'username':'example_username'})
 pprint.pprint(item)
 
-item = mydb.User_collection.find_one({'username':'example_username'})
+item = mydb.user_collection.find_one({'username':'example_username'})
 pprint.pprint(item)
 
-item = myclient[username].User_collection.find_one({'username':'example_username'})
+item = myclient[username].user_collection.find_one({'username':'example_username'})
 pprint.pprint(item)
 
 # lets use the _id returned by insertion, but becareful, we need to use bson.objectid.ObjectId for preprocessing
 from bson.objectid import ObjectId
-pprint.pprint(mydb.User_collection.find_one({'_id':ObjectId(post_id)}))
+pprint.pprint(mydb.user_collection.find_one({'_id':ObjectId(post_id_1)}))
